@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加学生</title>
+</head>
+<body>
+<form action="/doedit/<%=student.sid%>" method="GET">
+    <p>
+        sid : <input type="text" name="sid" disabled value="<%=student.sid%>">
+    </p>
+    <p>
+        name: <input type="text" name="name" value="<%=student.name%>">
+    </p>
+    <p>
+        age : <input type="text" name="age" value="<%=student.age%>">
+    </p>
+    <p>
+        sex:
+        men: <input type="radio" name="sex" value="men" <%if(student.sex == "men"){%>checked<%}%>>
+        women: <input type="radio" name="sex" value="women" <%if(student.sex == "women"){%>checked<%}%>>
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+</form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index展示数据</title>
+    <style type="text/css">
+        table,tr,td{
+            border: 1px solid black;
+        }
+        td{
+            width: 200px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <a href="/add" target="_blank">添加学生</a>
+    <tr>
+        <td>sid</td>
+        <td>name</td>
+        <td>age</td>
+        <td>sex</td>
+        <td>edit</td>
+    </tr>
+    <%for(var i = 0; i < students.length; i++){%>
+    <tr>
+        <td><%=students[i].sid%></td>
+        <td><%=students[i].name%></td>
+        <td><%=students[i].age%></td>
+        <td><%=students[i].sex%></td>
+        <td>
+            <a href="/edit/<%=students[i].sid%>">edit</a>&nbsp;&nbsp;
+            <a href="/remove/<%=students[i].sid%>">remove</a>
+        </td>
+    </tr>
+    <%}%>
+</table>
+
+</body>
+</html>
